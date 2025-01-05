@@ -20,6 +20,8 @@ try {
     echo "Error fetching questions: " . $e->getMessage();
     $questions = [];
 }
+// Fetch questions
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -199,6 +201,32 @@ try {
                 <?php endforeach; ?>
             </tbody>
         </table>
+        <h3>Registered Users</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Address</th>
+                    <th>Registered On</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($users as $index => $user): ?>
+                    <tr>
+                        <td><?= $index + 1 ?></td>
+                        <td><?= htmlspecialchars($user['first_name'] . " " . $user['last_name']) ?></td>
+                        <td><?= htmlspecialchars($user['email']) ?></td>
+                        <td><?= htmlspecialchars($user['phone']) ?></td>
+                        <td><?= htmlspecialchars($user['address']) ?></td>
+                        <td><?= htmlspecialchars($user['registration_date']) ?></td>
+                    </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
+
     </div>
 
     <script>

@@ -7,64 +7,99 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            background-color: #93f0c5;
             margin: 0;
             padding: 0;
         }
 
         .container {
-            max-width: 600px;
+            max-width: 400px;
             margin: 50px auto;
             padding: 20px;
             background-color: #fff;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
 
         h2 {
             text-align: center;
             color: #333;
+            font-size: 24px;
+            margin-bottom: 20px;
         }
 
         label {
             font-size: 14px;
-            margin-top: 10px;
+            color: #121070;
             display: block;
+            margin-bottom: 5px;
         }
 
         input, textarea, select, button {
             width: 100%;
-            padding: 10px;
-            margin-top: 5px;
-            margin-bottom: 20px;
-            border-radius: 5px;
+            padding: 12px;
+            margin-bottom: 15px;
+            border-radius: 6px;
             border: 1px solid #ccc;
+            font-size: 14px;
+            box-sizing: border-box;
+        }
+
+        input[type="text"], input[type="email"], input[type="tel"], input[type="date"], select {
+            background-color: #f9f9f9;
+        }
+
+        textarea {
+            background-color: #f9f9f9;
+            height: 80px;
+            resize: vertical;
         }
 
         button {
             background-color: #28a745;
             color: white;
+            font-size: 16px;
             border: none;
             cursor: pointer;
+            transition: background-color 0.3s ease;
         }
 
         button:hover {
             background-color: #218838;
         }
 
-        textarea {
-            height: 100px;
+        select:focus, input:focus, textarea:focus {
+            outline: none;
+            border-color: #007bff;
         }
 
-        select {
-            background-color: #fff;
+        /* Additional Styling for responsiveness */
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+                width: 100%;
+                max-width: 250px;
+            }
+
+            h2 {
+                font-size: 20px;
+            }
+
+            input, textarea, select {
+                padding: 10px;
+            }
+
+            button {
+                padding: 12px;
+                font-size: 14px;
+            }
         }
+
     </style>
 </head>
 <body>
     <div class="container">
         <h2>Registration Form</h2>
-        <!-- Add the action attribute to send data to register.php -->
         <form id="registrationForm" method="POST" action="admin/register.php">
             <label for="firstName">First Name</label>
             <input type="text" id="firstName" name="firstName" required>

@@ -1,76 +1,3 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Debys Foundation - Scholarship Application</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f8f9fa;
-            color: #333;
-        }
-        header {
-            background-color: #00ffaa;
-            color: white;
-            padding: 20px 10px;
-            text-align: center;
-        }
-        .container {
-            max-width: 1200px;
-            margin: 20px auto;
-            padding: 20px;
-            background: white;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-        .hero-image {
-            width: 100%;
-            height: 400px;
-            border-radius: 8px;
-        }
-        .message {
-            text-align: center;
-            margin: 20px 0;
-        }
-        .message h1 {
-            font-size: 2.5em;
-        }
-        .message p {
-            font-size: 1.2em;
-        }
-        .btn-register {
-            display: inline-block;
-            margin: 20px auto;
-            padding: 10px 20px;
-            font-size: 1.2em;
-            color: white;
-            background-color: #007bff;
-            border: none;
-            border-radius: 5px;
-            text-decoration: none;
-            cursor: pointer;
-        }
-        .btn-register:hover {
-            background-color: #0056b3;
-        }
-    </style>
-</head>
-<body>
-    <header>
-        <h1>Welcome to Deby's Foundation</h1>
-    </header>
-    <div class="container">
-        <img src="istockphoto-1028714088-1024x1024.jpg" alt="Students in an exam hall writing exam" class="hero-image" height="50px" width="50%">
-        <div class="message">
-            <h1>Empowering Futures Through Education</h1>
-            <p>At Debys Foundation, we believe in the transformative power of education. Our scholarship programs are designed to support dedicated students in achieving their dreams. Join us in building a brighter future.</p>
-            <a href="validatedregistrationfor.html" class="btn-register">Apply Now</a>
-        </div>
-    </div>
-</body>
-</html> -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -78,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Debys Foundation - Scholarship Application</title>
     <style>
+        /* General Styling */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -85,12 +13,91 @@
             background-color: #f8f9fa;
             color: #333;
         }
+
+        /* Navigation Bar Styling */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #00ffaa;
+            padding: 10px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            height: 20px;
+        
+        }
+
+        .navbar .logo {
+            font-size: 1.5em;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .navbar ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        .navbar ul li {
+            margin: 0 15px;
+        }
+
+        .navbar ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 1em;
+            padding: 5px 10px;
+            transition: background-color 0.3s;
+        }
+
+        .navbar ul li a:hover {
+            background-color: #007bff;
+            border-radius: 5px;
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 1.5em;
+            color: white;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .navbar ul {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                background-color: #00ffaa;
+                position: absolute;
+                top: 30px;
+                left: 0;
+                padding: 10px 0;
+            }
+
+            .navbar ul.show {
+                display: flex;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+        }
+
+        /* Page Header */
         header {
             background-color: #00ffaa;
             color: white;
             padding: 20px 10px;
             text-align: center;
         }
+
+        /* Content Container */
         .container {
             max-width: 1200px;
             margin: 20px auto;
@@ -98,46 +105,50 @@
             background: white;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
+
+        /* Slideshow */
         .slideshow-container {
             position: relative;
             max-width: 100%;
             margin: auto;
         }
+
         .slides {
             display: none;
         }
+
         .slides img {
             width: 100%;
-            height: 400px; /* Ensure consistent height */
-            object-fit: cover; /* Ensure the image fits within the container without distortion */
+            height: 400px;
+            object-fit: cover;
             border-radius: 8px;
         }
+
         .prev, .next {
             cursor: pointer;
             position: absolute;
             top: 50%;
-            width: auto;
             padding: 16px;
-            margin-top: -22px;
             color: white;
             font-weight: bold;
             font-size: 18px;
-            transition: 0.6s ease;
-            border-radius: 0 3px 3px 0;
             user-select: none;
+            border-radius: 3px;
         }
+
         .next {
             right: 0;
-            border-radius: 3px 0 0 3px;
         }
+
         .prev:hover, .next:hover {
             background-color: rgba(0, 0, 0, 0.8);
         }
+
         .dots {
             text-align: center;
-            padding: 10px 0;
-            background: #f8f9fa;
+            margin-top: 10px;
         }
+
         .dots span {
             cursor: pointer;
             height: 15px;
@@ -148,19 +159,25 @@
             display: inline-block;
             transition: background-color 0.6s ease;
         }
+
         .dots span.active {
             background-color: #007bff;
         }
+
+        /* Message Section */
         .message {
             text-align: center;
             margin: 20px 0;
         }
+
         .message h1 {
             font-size: 2.5em;
         }
+
         .message p {
             font-size: 1.2em;
         }
+
         .btn-register {
             display: inline-block;
             margin: 20px auto;
@@ -168,30 +185,60 @@
             font-size: 1.2em;
             color: white;
             background-color: #007bff;
-            border: none;
-            border-radius: 5px;
             text-decoration: none;
-            cursor: pointer;
+            border-radius: 5px;
         }
+
         .btn-register:hover {
             background-color: #0056b3;
+        }
+        .navbar img {
+            height: 40px;
+            margin-right: 10px;
+            border-radius: 20px;
+        }
+        h3{
+            color: #fdfafa;
+        }
+        .nav{
+            display: flex;
         }
     </style>
 </head>
 <body>
-    <header>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav">
+        <img src="scholarship-7617731_640.png" alt="Deby's Foundation Logo">
+        <h3>Debys Foundation</h3>
+        </div>
+        <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="overview.html">About</a></li>
+            <li><a href="mission.html">Mission</a></li>
+            <li><a href="validatedregistrationfor.html">Apply Now</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Header -->
+    <header id="home">
         <h1>Welcome to Debys Foundation</h1>
     </header>
+
+    <!-- Content Container -->
     <div class="container">
+        <!-- Slideshow -->
         <div class="slideshow-container">
             <div class="slides">
-                <img src="1.jpg" alt="Slide 1">
+                <img src="a.jpg" alt="Slide 1">
             </div>
             <div class="slides">
-                <img src="2.jpg" alt="Slide 2">
+                <img src="b.jpg" alt="Slide 2">
             </div>
             <div class="slides">
-                <img src="3.jpg" alt="Slide 3">
+                <img src="c.jpg" alt="Slide 3">
             </div>
             <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
             <a class="next" onclick="changeSlide(1)">&#10095;</a>
@@ -201,13 +248,24 @@
             <span class="dot" onclick="currentSlide(2)"></span>
             <span class="dot" onclick="currentSlide(3)"></span>
         </div>
+
+        <!-- Message Section -->
         <div class="message">
             <h1>Empowering Futures Through Education</h1>
             <p>At Debys Foundation, we believe in the transformative power of education. Our scholarship programs are designed to support dedicated students in achieving their dreams. Join us in building a brighter future.</p>
             <a href="validatedregistrationfor.html" class="btn-register">Apply Now</a>
         </div>
     </div>
+
+    <!-- JavaScript -->
     <script>
+        // Navigation Bar Toggle
+        function toggleMenu() {
+            const navLinks = document.querySelector('.navbar ul');
+            navLinks.classList.toggle('show');
+        }
+
+        // Slideshow Functionality
         let slideIndex = 1;
         let autoSlideTimer;
 
@@ -241,7 +299,7 @@
         function autoSlide() {
             autoSlideTimer = setTimeout(() => {
                 changeSlide(1);
-            }, 5000); // Change image every 5 seconds
+            }, 10000); // Change image every 5 seconds
         }
 
         document.addEventListener("DOMContentLoaded", () => {
